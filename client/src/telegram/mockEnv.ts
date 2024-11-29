@@ -24,7 +24,7 @@ if (import.meta.env.DEV) {
     } catch (e) {
       const initDataRaw = new URLSearchParams([
         ['user', JSON.stringify({
-          id: 1,
+          id: 2,
           first_name: 'Andrew',
           last_name: 'Rogue',
           username: 'rogue',
