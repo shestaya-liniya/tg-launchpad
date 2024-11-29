@@ -14,8 +14,6 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.61.5",
-    "@tanstack/react-router": "^1.84.0",
-    "@tanstack/router": "^0.0.1-beta.53",
     "@telegram-apps/sdk-react": "^2.0.10",
     "@telegram-apps/telegram-ui": "^2.1.5",
     "@tonconnect/ui-react": "^2.0.5",
@@ -27,8 +25,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.2.0",
-    "@tanstack/router-devtools": "^1.84.0",
-    "@tanstack/router-plugin": "^1.84.4",
     "@types/node": "^20.12.11",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",

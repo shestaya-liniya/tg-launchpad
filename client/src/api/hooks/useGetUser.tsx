@@ -7,25 +7,11 @@ import { QueryKeys } from "./queryKeys";
 const UseGetUser = () => {
     const initDataState = useSignal(initData.state);
     const initDataRaw = useSignal(initData.raw);
-
-
-    if (!initDataState || !initDataRaw) {
-        return {
-          user: undefined,
-          isLoading: true,
-          isError: true,
-          error: null,
-        };
-      }
-
-      console.log('YO')
     
-    const id = initDataState.chat?.id!;
-  
     const {data: user, isLoading, isError, error} = useQuery<User>({
       queryKey: [QueryKeys.USER],
-      queryFn: (): Promise<User> => UserService.getUserByTelegramId(id, initDataRaw),
-      enabled: !!initDataState?.chat && !!initDataRaw,
+      queryFn: (): Promise<User> => UserService.getUserByTelegramId(initDataState?.user?.id!, initDataRaw!),
+      enabled: !!initDataState && !!initDataRaw,
       retry: (failureCount, error) => {
         // 404 -> stop retry, other server error (overload) -> keep trying
         if (axios.isAxiosError(error) && error.response) {
